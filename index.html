@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graf</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Graf</h1>
+    <div class="functions">
+        <input type="checkbox" value="sin" id="sin" onclick="isSinChecked();" checked><span>sin</span>
+        <input type="checkbox" value="cos" id="cos" onclick="isCosChecked();" checked><span>cos</span>
+        <div id="graph">
+    </div>
+
+    </div>
+    
+    <div class="endBtn">
+        <input type="button" value="Koniec" id="endPlot">
+    </div>  
+
+    <template>
+        <div>
+            <span>Number</span>
+            <input type="checkbox" id="ampTextBox" onclick="isAmpChecked();">
+            <input type="number" min="1" step="0.1" id="ampTextInput" oninput="ampSlider.value = ampTextInput.value" value="1" hidden>
+        </div>
+
+        <div>
+            <span>Slider</span>
+            <input type="checkbox" id="ampSliderBox" onclick="isAmpChecked();">
+            <input type="range" min="0" max="10" id="ampSlider" oninput="ampTextInput.value = ampSlider.value; this.nextElementSibling.value = this.value" value="1" hidden>
+            <output id="sliderBubble"></output>
+        </div>
+    </template>
+
+    <amplitude-controls></amplitude-controls>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
